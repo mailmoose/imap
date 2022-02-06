@@ -13,6 +13,7 @@ type User struct {
 	ID        uint   `gorm:"primary_key;auto_increment;not_null"`
 	Username_ string `gorm:"column:username;unique"`
 	Password  string
+	Email     string `gorm:"unique"`
 	//mailboxes map[string]*Mailbox
 }
 

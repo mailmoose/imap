@@ -67,7 +67,7 @@ func CloseDB() error {
 
 func seedDB() {
 
-	user := &User{Username_: "username", Password: "password"}
+	user := &User{Username_: "username", Password: "password", Email: "username@localhost"}
 
 	result := db.Create(&user)
 	if result.Error != nil {
