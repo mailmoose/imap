@@ -45,3 +45,20 @@ func AddMail(smtpState *smtp.State) (*Message, error) {
 
 	return nil, nil
 }
+
+// MailaddressExists checks whether a mailbox exist for the given address.
+func MailaddressExists(address string) (bool, error) {
+
+	user := &User{}
+	err := db.Where(User{Email: address}).Find(user).Error
+	if err != nil {
+		return false, fmt.Errorf("couldn't find recipient: %v", err)
+	}
+
+	if user.Email == address {
+		return true, nil
+	}
+
+	return false, nil
+
+}
