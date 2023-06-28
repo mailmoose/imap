@@ -148,7 +148,7 @@ func (mbox *Mailbox) Status(items []imap.StatusItem) (*imap.MailboxStatus, error
 
 	status := imap.NewMailboxStatus(mbox.Name_, items)
 	status.Flags = mbox.flags()
-	status.PermanentFlags = []string{`\Seen \Answered`, `\Flagged`, `\Draft`, `\Deleted`, `\*`}
+	status.PermanentFlags = []string{`\Seen`, `\Answered`, `\Flagged`, `\Draft`, `\Deleted`, `\*`}
 	status.UnseenSeqNum = mbox.unseenSeqNum()
 
 	for _, name := range items {

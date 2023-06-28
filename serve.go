@@ -14,7 +14,7 @@ func Serve(config *Config) {
 
 	err := InitDB(config.DatabaseURL)
 	if err != nil {
-		log.Fatalf("Couldn't connect to database: %v")
+		log.Fatalf("Couldn't connect to database: %v", err)
 	}
 
 	if config.SeedDB {
@@ -24,7 +24,7 @@ func Serve(config *Config) {
 	// Create the backend
 	backend, err := New("")
 	if err != nil {
-		log.Fatalf("Couldn't create backend: %v")
+		log.Fatalf("Couldn't create backend: %v", err)
 	}
 	_ = backend
 

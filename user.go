@@ -52,9 +52,9 @@ func (u *User) GetMailbox(name string) (backend.Mailbox, error) {
 
 	mailbox := Mailbox{}
 
-	err := db.Where(&Mailbox{Name_: name, UserID: u.ID}).Find(&mailbox).Error
+	err := db.Where(&Mailbox{Name_: name, UserID: u.ID}).First(&mailbox).Error
 	if err != nil {
-		return nil, fmt.Errorf("couldn't get mailbox: %v", err)
+		return nil, fmt.Errorf("couldn't get mailbox: %w", err)
 	}
 
 	/*
