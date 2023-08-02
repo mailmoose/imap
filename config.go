@@ -1,4 +1,4 @@
-package imapbackend
+package imap
 
 import (
 	"fmt"

@@ -1,32 +1,32 @@
-package imapbackend
+package imap
 
 import (
 	"os"
 
+	imapbackend "github.com/gopistolet/gopistolet/backend/imap"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/emersion/go-imap/server"
 )
 
-func Serve(config *Config) {
+func Serve(config *Config, backend *imapbackend.IMAPBackend) {
 
 	log.SetLevel(log.DebugLevel)
 
-	err := InitDB(config.DatabaseURL)
-	if err != nil {
-		log.Fatalf("Couldn't connect to database: %v", err)
-	}
+	/*
+		if config.SeedDB {
+			seedDB()
+		}
 
-	if config.SeedDB {
-		seedDB()
-	}
 
-	// Create the backend
-	backend, err := New("")
-	if err != nil {
-		log.Fatalf("Couldn't create backend: %v", err)
-	}
-	_ = backend
+		// Create the backend
+		backend, err := NewIMAPBackend(db)
+		if err != nil {
+			log.Fatalf("Couldn't create backend: %v", err)
+		}
+		_ = backend
+
+	*/
 
 	// Create a IMAP new server
 	s := server.New(backend)

@@ -1,10 +1,10 @@
-package imapbackend
+package imap
 
 import (
 	"fmt"
-	"time"
 
-	log "github.com/sirupsen/logrus"
+	imapbackend "github.com/gopistolet/gopistolet/backend/imap"
+
 	"github.com/xo/dburl"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"
@@ -17,11 +17,11 @@ var db *gorm.DB
 // New creates a new datastore with the given database connection string/url
 // e.g. postgres://user:pass@localhost/dbname
 // e.g. sqlite:/path/to/file.db
-func InitDB(dbURL string) error {
+func InitDB(dbURL string) (*gorm.DB, error) {
 
 	u, err := dburl.Parse(dbURL)
 	if err != nil {
-		return fmt.Errorf("couldn't parse database connection url: %w", err)
+		return nil, fmt.Errorf("couldn't parse database connection url: %w", err)
 	}
 
 	c := &gorm.Config{}
@@ -37,17 +37,18 @@ func InitDB(dbURL string) error {
 		db, err = gorm.Open(mysql.Open(u.DSN), c)
 
 	default:
-		return fmt.Errorf("unsupported database driver: %s", u.Driver)
+		return nil, fmt.Errorf("unsupported database driver: %s", u.Driver)
 	}
 
 	if err != nil {
-		return fmt.Errorf("failed to establish a database connection: %w", err)
+		return nil, fmt.Errorf("failed to establish a database connection: %w", err)
 	}
 
 	// Migrate
-	db.AutoMigrate(&User{}, &Mailbox{}, &Message{})
+	// TODO: how to do this properly?
+	db.AutoMigrate(&imapbackend.User{}, &imapbackend.Mailbox{}, &imapbackend.Message{})
 
-	return nil
+	return db, nil
 
 }
 
@@ -65,9 +66,10 @@ func CloseDB() error {
 	return nil
 }
 
+/*
 func seedDB() {
 
-	user := &User{Username_: "username", Password: "password", Email: "username@localhost"}
+	user := &User{Username_: "username@example.com", Password: "password", Email: "username@localhost"}
 
 	result := db.Create(&user)
 	if result.Error != nil {
@@ -107,3 +109,4 @@ func seedDB() {
 	}
 
 }
+*/

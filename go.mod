@@ -1,4 +1,4 @@
-module github.com/gopistolet/imap-backend
+module github.com/gopistolet/imap
 
 go 1.15
 
