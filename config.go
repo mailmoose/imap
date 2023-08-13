@@ -9,7 +9,6 @@ var (
 	defaultIMAPPort    = 143
 	defaultIMAPAddress = fmt.Sprintf(":%d", defaultIMAPPort)
 	defaultDatabaseURL = "sqlite:test.db"
-	defaultSeedDB      = false
 )
 
 // BuildConfigFromEnv populates a IMAP backend config from env variables
@@ -19,12 +18,8 @@ func BuildConfigFromEnv() *Config {
 	config.IMAPAddress = getEnv("IMAP_ADDRESS", defaultIMAPAddress)
 	config.DatabaseURL = getEnv("DATABASE_URL", defaultDatabaseURL)
 
-	seedDB := getEnv("SEED_DB", "0")
-	if seedDB == "1" {
-		config.SeedDB = true
-	} else {
-		config.SeedDB = false
-	}
+	config.TlsCert = getEnv("TLS_CERT", "")
+	config.TlsKey = getEnv("TLS_KEY", "")
 
 	return config
 }
@@ -34,6 +29,8 @@ type Config struct {
 	IMAPAddress string
 	DatabaseURL string
 	SeedDB      bool
+	TlsCert     string
+	TlsKey      string
 }
 
 // Validate validates whether all config is set and valid

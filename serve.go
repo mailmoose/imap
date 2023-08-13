@@ -1,6 +1,7 @@
 package imap
 
 import (
+	"crypto/tls"
 	"os"
 
 	imapbackend "github.com/gopistolet/gopistolet/backend/imap"
@@ -36,6 +37,17 @@ func Serve(config *Config, backend *imapbackend.IMAPBackend) {
 	s.AllowInsecureAuth = true
 
 	s.Debug = os.Stderr
+
+	if config.TlsCert != "" && config.TlsKey != "" {
+		cert, err := tls.LoadX509KeyPair(config.TlsCert, config.TlsKey)
+		if err != nil {
+			log.Fatalf("Could not load keypair: %v", err)
+		} else {
+			s.TLSConfig = &tls.Config{
+				Certificates: []tls.Certificate{cert},
+			}
+		}
+	}
 
 	log.Printf("Starting IMAP server at %s", config.IMAPAddress)
 	if err := s.ListenAndServe(); err != nil {
