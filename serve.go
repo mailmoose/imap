@@ -4,7 +4,7 @@ import (
 	"crypto/tls"
 	"os"
 
-	imapbackend "github.com/gopistolet/gopistolet/backend/imap"
+	imapbackend "github.com/mistralmail/mistralmail/backend/imap"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/emersion/go-imap/server"
