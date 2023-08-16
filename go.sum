@@ -864,6 +864,8 @@ github.com/miekg/dns v1.1.55/go.mod h1:uInx36IzPl7FYnDcMeVWxj9byh7DutNykX4G9Sj60
 github.com/mimuret/golang-iij-dpf v0.9.1/go.mod h1:sl9KyOkESib9+KRD3HaGpgi1xk7eoN2+d96LCLsME2M=
 github.com/mistralmail/smtp v0.0.0-20230816145933-d26bd5833a55 h1:ecVbXTwEF88YkeNfMt066kWjx2oo0nlqAj3gbl58zxA=
 github.com/mistralmail/smtp v0.0.0-20230816145933-d26bd5833a55/go.mod h1:Pfy5WGEIM8IHBP1rTLKvWlEHeUAzcUS/p0rxRQAEwQ4=
+github.com/mistralmail/smtp v0.0.0-20230816153543-329aae08a180 h1:foVO9WT9cuxr/ughff4GzDg8OlFLBT9MfvepH0m4fKk=
+github.com/mistralmail/smtp v0.0.0-20230816153543-329aae08a180/go.mod h1:PGxeM8si2tjHpyvok6f9GOZMZJzjq5z5GJhlJgTna0I=
 github.com/mitchellh/cli v1.0.0/go.mod h1:hNIlj7HEI86fIcpObd7a0FcrxTWetlwJDGcceTlRvqc=
 github.com/mitchellh/cli v1.1.5/go.mod h1:v8+iFts2sPIKUV1ltktPXMCC8fumSKFItNcD2cLtRR4=
 github.com/mitchellh/copystructure v1.0.0/go.mod h1:SNtv71yrdKgLRyLFxmLdkAbkKEFWgYaq1OVrnRcwhnw=
