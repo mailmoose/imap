@@ -31,6 +31,7 @@ type Config struct {
 	SeedDB      bool
 	TlsCert     string
 	TlsKey      string
+	Debug       bool
 }
 
 // Validate validates whether all config is set and valid

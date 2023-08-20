@@ -2,7 +2,6 @@ package imap
 
 import (
 	"crypto/tls"
-	"os"
 
 	imapbackend "github.com/mistralmail/mistralmail/backend/imap"
 	log "github.com/sirupsen/logrus"
@@ -14,21 +13,6 @@ func Serve(config *Config, backend *imapbackend.IMAPBackend) {
 
 	log.SetLevel(log.DebugLevel)
 
-	/*
-		if config.SeedDB {
-			seedDB()
-		}
-
-
-		// Create the backend
-		backend, err := NewIMAPBackend(db)
-		if err != nil {
-			log.Fatalf("Couldn't create backend: %v", err)
-		}
-		_ = backend
-
-	*/
-
 	// Create a IMAP new server
 	s := server.New(backend)
 	s.Addr = config.IMAPAddress
@@ -36,8 +20,17 @@ func Serve(config *Config, backend *imapbackend.IMAPBackend) {
 	// authentication over unencrypted connections
 	s.AllowInsecureAuth = true
 
-	s.Debug = os.Stderr
+	// Log with logrus
+	logrusLogger := log.New()
+	logWriter := logrusLogger.Writer()
+	defer logWriter.Close()
 
+	if config.Debug {
+		s.Debug = logWriter
+	}
+	s.ErrorLog = logrusLogger
+
+	// TLS config
 	if config.TlsCert != "" && config.TlsKey != "" {
 		cert, err := tls.LoadX509KeyPair(config.TlsCert, config.TlsKey)
 		if err != nil {
