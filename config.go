@@ -5,8 +5,8 @@ import (
 )
 
 var (
-	defaultIMAPPort    = 143
-	defaultIMAPAddress = fmt.Sprintf(":%d", defaultIMAPPort)
+	DefaultIMAPPort    = 143
+	DefaultIMAPAddress = fmt.Sprintf(":%d", DefaultIMAPPort)
 )
 
 // Config contains all the config for serving the IMAP backend
