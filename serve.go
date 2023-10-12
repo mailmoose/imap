@@ -3,13 +3,13 @@ package imap
 import (
 	"crypto/tls"
 
-	imapbackend "github.com/mistralmail/mistralmail/backend/imap"
 	log "github.com/sirupsen/logrus"
 
+	"github.com/emersion/go-imap/backend"
 	"github.com/emersion/go-imap/server"
 )
 
-func Serve(config *Config, backend *imapbackend.IMAPBackend) {
+func Serve(config *Config, backend backend.Backend) {
 
 	log.SetLevel(log.DebugLevel)
 
