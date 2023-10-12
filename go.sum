@@ -521,7 +521,6 @@ github.com/dnsimple/dnsimple-go v1.2.0/go.mod h1:z/cs26v/eiRvUyXsHQBLd8lWF8+cD6G
 github.com/emersion/go-imap v1.2.1 h1:+s9ZjMEjOB8NzZMVTM3cCenz2JrQIGGo5j1df19WjTA=
 github.com/emersion/go-imap v1.2.1/go.mod h1:Qlx1FSx2FTxjnjWpIlVNEuX+ylerZQNFE5NsmKFSejY=
 github.com/emersion/go-message v0.15.0/go.mod h1:wQUEfE+38+7EW8p8aZ96ptg6bAb1iwdgej19uXASlE4=
-github.com/emersion/go-message v0.16.0/go.mod h1:pDJDgf/xeUIF+eicT6B/hPX/ZbEorKkUMPOxrPVG2eQ=
 github.com/emersion/go-message v0.17.0 h1:NIdSKHiVUx4qKqdd0HyJFD41cW8iFguM2XJnRZWQH04=
 github.com/emersion/go-message v0.17.0/go.mod h1:/9Bazlb1jwUNB0npYYBsdJ2EMOiiyN3m5UVHbY7GoNw=
 github.com/emersion/go-sasl v0.0.0-20200509203442-7bfe0ed36a21/go.mod h1:iL2twTeMvZnrg54ZoPDNfJaJaqy0xIQFuBdrLsmspwQ=
@@ -896,9 +895,8 @@ github.com/miekg/dns v1.1.47/go.mod h1:e3IlAVfNqAllflbibAZEWOXOQ+Ynzk/dDozDxY7Xn
 github.com/miekg/dns v1.1.55/go.mod h1:uInx36IzPl7FYnDcMeVWxj9byh7DutNykX4G9Sj60FY=
 github.com/mimuret/golang-iij-dpf v0.9.1/go.mod h1:sl9KyOkESib9+KRD3HaGpgi1xk7eoN2+d96LCLsME2M=
 github.com/mistralmail/gospf v0.0.0-20230816151716-f0afe66cc671/go.mod h1:M/VZfrMy4xzEl1/g7GQcEcXgG7PiSYj6FUgW1mvVNgs=
-github.com/mistralmail/imap v0.0.0-20230820145337-91b593b9b4e4/go.mod h1:I4J17mfUMoNj/bAUBwxPRVAT4jQEbSZHjr7MSI9ZDMs=
-github.com/mistralmail/smtp v0.0.0-20230820133843-1c0baa47694e h1:dLa/Dt+LSj/nv3RbV4Y2fhGzq3KuEmbBsGBAP1Z1Ev4=
-github.com/mistralmail/smtp v0.0.0-20230820133843-1c0baa47694e/go.mod h1:j8isr/Mf5GZDTH2hpZKqtRrZu7VnzbMjVUeV/w/SjYE=
+github.com/mistralmail/mistralmail v0.0.0-20231012190358-dd397b2a28de h1:br4aELKqiHDOzTqKvpX4Y8Z1yL0PWWBu+G8fLD/hwZU=
+github.com/mistralmail/mistralmail v0.0.0-20231012190358-dd397b2a28de/go.mod h1:0wHqowXhyzvFLs7t+MFWB84Qq9mINHYPsNzBJmZS0Ks=
 github.com/mitchellh/cli v1.0.0/go.mod h1:hNIlj7HEI86fIcpObd7a0FcrxTWetlwJDGcceTlRvqc=
 github.com/mitchellh/cli v1.1.5/go.mod h1:v8+iFts2sPIKUV1ltktPXMCC8fumSKFItNcD2cLtRR4=
 github.com/mitchellh/copystructure v1.0.0/go.mod h1:SNtv71yrdKgLRyLFxmLdkAbkKEFWgYaq1OVrnRcwhnw=
@@ -1849,7 +1847,6 @@ gorm.io/driver/sqlite v1.5.2/go.mod h1:qxAuCol+2r6PannQDpOP1FP6ag3mKi4esLnB/jHed
 gorm.io/gorm v1.25.0/go.mod h1:L4uxeKpfBml98NYqVqwAdmV1a2nBtAec/cf3fpucW/k=
 gorm.io/gorm v1.25.1/go.mod h1:L4uxeKpfBml98NYqVqwAdmV1a2nBtAec/cf3fpucW/k=
 gorm.io/gorm v1.25.2-0.20230530020048-26663ab9bf55/go.mod h1:L4uxeKpfBml98NYqVqwAdmV1a2nBtAec/cf3fpucW/k=
-gorm.io/gorm v1.25.2/go.mod h1:L4uxeKpfBml98NYqVqwAdmV1a2nBtAec/cf3fpucW/k=
 gorm.io/gorm v1.25.5 h1:zR9lOiiYf09VNh5Q1gphfyia1JpiClIWG9hQaxB/mls=
 gorm.io/gorm v1.25.5/go.mod h1:hbnx/Oo0ChWMn1BIhpy1oYozzpM15i4YPuHDmfYtwg8=
 honnef.co/go/tools v0.0.0-20190102054323-c2f93a96b099/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
