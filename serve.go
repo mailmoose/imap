@@ -1,8 +1,6 @@
 package imap
 
 import (
-	"crypto/tls"
-
 	log "github.com/sirupsen/logrus"
 
 	"github.com/emersion/go-imap/backend"
@@ -31,16 +29,7 @@ func Serve(config *Config, backend backend.Backend) {
 	s.ErrorLog = logrusLogger
 
 	// TLS config
-	if config.TlsCert != "" && config.TlsKey != "" {
-		cert, err := tls.LoadX509KeyPair(config.TlsCert, config.TlsKey)
-		if err != nil {
-			log.Fatalf("Could not load keypair: %v", err)
-		} else {
-			s.TLSConfig = &tls.Config{
-				Certificates: []tls.Certificate{cert},
-			}
-		}
-	}
+	s.TLSConfig = config.TLSConfig
 
 	log.Printf("Starting IMAP server at %s", config.IMAPAddress)
 	if err := s.ListenAndServe(); err != nil {

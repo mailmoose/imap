@@ -1,6 +1,7 @@
 package imap
 
 import (
+	"crypto/tls"
 	"fmt"
 )
 
@@ -15,11 +16,8 @@ type Config struct {
 	// IMAPAddress is the address on which the IMAP server will be exposed.
 	IMAPAddress string
 
-	// TlsCert is the public certificate.
-	TlsCert string
-
-	// TlsKey is the certificates private key.
-	TlsKey string
+	// TLSConfig for the IMAP server
+	TLSConfig *tls.Config
 
 	// Debug flag.
 	Debug bool
